@@ -1,5 +1,56 @@
-class Repo {
-  constructor(data) {
+// @flow
+interface UnserializedRepoAttributes {
+  contributors_url: string;
+  created_at: string;
+  description: string;
+  forks: number;
+  forks_count: number;
+  forks_url: string;
+  full_name: string;
+  git_url: string;
+  has_issues: boolean;
+  has_pages: boolean;
+  homepage: string;
+  html_url: string;
+  id: number;
+  issues_url: string;
+  language: string;
+  name: string;
+  open_issues: number;
+  open_issues_count: number;
+  stargazers_count: number;
+  updated_at: string;
+  url: string;
+  watchers: number;
+  watchers_count: number;
+}
+
+export default class Repo {
+  contributorsUrl: string;
+  createdAt: string;
+  description: string;
+  forks: number;
+  forksCount: number;
+  forksUrl: string;
+  fullName: string;
+  gitUrl: string;
+  hasIssues: boolean;
+  hasPages: boolean;
+  homepage: string;
+  htmlUrl: string;
+  id: number;
+  issuesUrl: string;
+  language: string;
+  name: string;
+  openIssues: number;
+  openIssuesCount: number;
+  stargazersCount: number;
+  updatedAt: string;
+  url: string;
+  watchers: number;
+  watchersCount: number;
+
+  constructor(data: UnserializedRepoAttributes) {
     this.contributorsUrl = data.contributors_url;
     this.createdAt = data.created_at;
     this.description = data.description;
@@ -7,7 +58,7 @@ class Repo {
     this.forksCount = data.forks_count;
     this.forksUrl = data.forks_url;
     this.fullName = data.full_name;
-    this.git_Url = data.git_url;
+    this.gitUrl = data.git_url;
     this.hasIssues = data.has_issues;
     this.hasPages = data.has_pages;
     this.homepage = data.homepage;
@@ -25,5 +76,3 @@ class Repo {
     this.watchersCount = data.watchers_count;
   }
 }
-
-export default Repo;
