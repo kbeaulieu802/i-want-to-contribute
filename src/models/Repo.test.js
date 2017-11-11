@@ -4,7 +4,7 @@ describe('Repo', () => {
   it('is new-able', () => {
     const subject = new Repo({
       id: 123,
-      full_name: 'facebook/react',
+      fullName: 'facebook/react',
       name: 'react',
       language: 'JavaScript'
     })

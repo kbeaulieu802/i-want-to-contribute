@@ -3,13 +3,15 @@
  * that are within state.results.
  */
 import Repo from '../models/Repo';
+import RepoSerializer from '../serializers/RepoSerializer';
 
 export function updateResults(data) {
   const items = data.items;
   const results = {};
   const sortedIds = []
   for (let i=0; i<items.length; i++) {
-    let repo = new Repo(items[i]);
+    const params = RepoSerializer.deserialize(items[i]);
+    const repo = new Repo(params);
     results[items[i].id] = repo;
     sortedIds.push(repo.id);
   }
